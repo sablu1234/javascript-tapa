@@ -35,21 +35,17 @@ function startSecretNumberGame(){
             console.log("Please enter a valid number. It will be between 1 to 10");
             continue;
         }
-        
 
         attempts++;
-        
+
         if(guess<secretNumber){
             console.log("Too low! from secrect numer");
         }else if( guess > secretNumber){
             console.log("Too high! from secrect numer");
         }else{
-            console.log("congratualtion! you winn the game");
+            console.log(`congratualtion! you winn the game you attemt count ${attempts}`);
             break;
         }
-
-        
-        
     }
 
     const playAgainprompt = prompt("Do you want to play again? yes/no?");
