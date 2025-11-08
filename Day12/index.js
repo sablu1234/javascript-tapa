@@ -36,7 +36,7 @@ console.log(user[someKey]);// 34
 // console.log(favCars);
 
 
-//  Constructor Fucntion
+//  Constructor Fucntion a new use korte hoi this use kote hoi
 function Car(name,model){
     this.name = name;
     this.model = model;
@@ -217,3 +217,5 @@ delete dept.name;
 dept.name = "HR";
 
 console.log(dept);
+
+console.log(Object.hasOwn(dept, "address"));
