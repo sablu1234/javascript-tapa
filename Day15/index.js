@@ -227,27 +227,62 @@ console.log(colors);
 // The default sort() method coverts the elemet types into Strings
 // The default sort() is ascending.
 
-const names = ['tom','alex','bob'];
-console.log("After default sorting: ",names.sort());//['alex', 'bob', 'tom']
+// const names = ['tom','alex','bob'];
+// console.log("After default sorting: ",names.sort());//['alex', 'bob', 'tom']
 
-const artists = [
-    'John White Abbott',
-    'Leonardo da Vinci',
-    'Charles Aubry',
-    'Anna Atkins',
-    'Barent Avercamp'
-]
+// const artists = [
+//     'John White Abbott',
+//     'Leonardo da Vinci',
+//     'Charles Aubry',
+//     'Anna Atkins',
+//     'Barent Avercamp'
+// ]
 
-console.log("Default sorting of the artists array", artists.sort());
+// console.log("Default sorting of the artists array", artists.sort());
 
-artists.sort(function(a, b){
-    return a === b ? 0 : a > b ? -1 : 1
-});
+// artists.sort(function(a, b){
+//     return a === b ? 0 : a > b ? -1 : 1
+// });
 
-console.log('Sort the artist names (Descending)', artists)
+// console.log('Sort the artist names (Descending)', artists)
 
-let ages = [2, 1000, 10, 3, 23, 12, 30, 21];
-console.log("Age with default sorting", ages.sort(function(a, b){
-    return a === b ? 0 : a > b ? 1 : -1
-}));
+// let ages = [2, 1000, 10, 3, 23, 12, 30, 21];
+// console.log("Age with default sorting", ages.sort(function(a, b){
+//     return a === b ? 0 : a > b ? 1 : -1
+// }));
 
+
+// splice()
+// splice(start, deleteCount, item, item1, item2);
+
+// const names = ['tom', 'alex', 'bob'];
+// console.log(names.splice(0,1, "john"));//['tom']
+// console.log(names);
+
+// console.log(names.splice(1, 0, "zack"));
+
+// console.log(names.splice(2, 1, "zack"));
+// console.log(names);
+
+
+
+// at();
+// const junkFoodILove = ['🥖', '🍔', '🍟', '🍕', '🌭', '🥪', '🌮', '🍿'];
+// console.log(junkFoodILove.at(0)); //'🥖'
+// console.log(junkFoodILove.at(3)); //'🍕'
+// console.log(junkFoodILove.at(-1)); //'🍿'
+// console.log(junkFoodILove.at(-5)); //'🍕'
+// console.log(junkFoodILove.at(-8)); //'🥖'
+// console.log(junkFoodILove.at(10)); //'undefined'
+
+
+// copyWithin()
+// copyWithin(target, start, end);
+
+const array = [1,2,3,4,5,6,7];
+array.copyWithin(0,3,6);
+console.log(array);//[4, 5, 6, 4, 5, 6, 7]
+
+const array1 = [1,2,3,4,5,6,7];
+array1.copyWithin(0,4);
+console.log(array1);//[5, 6, 7, 4, 5, 6, 7]
