@@ -43,9 +43,9 @@ for(let i=0; i<=salad.length-1; i++){
 
 // push() - end (add array in end)
 // const salad = ['🍔','😎','❤️','😃','😉','🫥','🫠'];
-const ret = salad.push('🤷‍♂️');
-console.log(ret);
-console.log(salad);
+// const ret = salad.push('🤷‍♂️');
+// console.log(ret);
+// console.log(salad);
 
 //Unshift - start(add array in frist)
 const unret = salad.unshift('😒');
@@ -279,10 +279,121 @@ console.log(colors);
 // copyWithin()
 // copyWithin(target, start, end);
 
-const array = [1,2,3,4,5,6,7];
-array.copyWithin(0,3,6);
-console.log(array);//[4, 5, 6, 4, 5, 6, 7]
+// const array = [1,2,3,4,5,6,7];
+// array.copyWithin(0,3,6);
+// console.log(array);//[4, 5, 6, 4, 5, 6, 7]
 
-const array1 = [1,2,3,4,5,6,7];
-array1.copyWithin(0,4);
-console.log(array1);//[5, 6, 7, 4, 5, 6, 7]
+// const array1 = [1,2,3,4,5,6,7];
+// array1.copyWithin(0,4);
+// console.log(array1);//[5, 6, 7, 4, 5, 6, 7]
+
+
+// flat();
+
+// {
+//     const arr1 = [0,1,2,[3,4]];
+//     console.log(arr1.flat());
+
+//     const arr2 = [0,1,[2,[3,[4,5]]]]
+//     console.log(arr2.flat(Infinity));
+
+
+// }
+
+
+// grouping();
+
+// {
+//     const employees = [
+//         { name: "Bob", dept: "Engineering", salary: "5000" },
+//         { name: "Alex", dept: "HR", salary: "3000" },
+//         { name: "Ravi", dept: "Engineering", salary: "7000" },
+//         { name: "John", dept: "Engineering", salary: "1000" },
+//         { name: "Tom", dept: "sales", salary: "6000" },
+//     ]
+
+//     const groupByDet = Object.groupBy( employees, ({dept}) => dept );
+//     console.log(groupByDet);
+
+//     const groupedByMoreThan5000 = Object.groupBy( employees, ({salary}) => {
+//         return salary >= 5000 ? "More than 5k" : "Less than 5k";
+//     })
+
+//     console.log(groupedByMoreThan5000);
+// }
+
+
+
+// toReverse();
+// const items = [1,2,3];
+// const reversedItems = items.toReversed();
+// console.log(reversedItems);
+// console.log(items);
+
+
+// toSorted();
+// const months = ["Mar", "Jan", "Feb", "Dec"];
+// const sortedMonths = months.toSorted();
+
+// console.log(sortedMonths);// ['Dec', 'Feb', 'Jan', 'Mar']
+// console.log(months);//['Mar', 'Jan', 'Feb', 'Dec']
+
+
+// toSplice();
+// const months = [ "Jan", "Mar", "Apr", "May"];
+// const months2 = months.toSpliced(1, 0, "Feb");
+// console.log(months2);//['Jan', 'Feb', 'Mar', 'Apr', 'May']
+// console.log(months);//['Jan', 'Mar', 'Apr', 'May']
+
+
+// with();
+const numbers = [1,2,3,4,5];
+// numbers[2] = 6;
+
+const newArray = numbers.with(2, 6);
+console.log(numbers); //[1, 2, 6, 4, 5]
+console.log(newArray); //Changed (A new copy) => [1, 2, 6, 4, 5]
+
+// numbers[-2] = 8 //
+const anotherArray = numbers.with(-2,8);
+console.log(anotherArray);
+
+// with(indexedDB, value);
+
+document.getElementsByTagName("li");
+
+// Array Like
+// const arr_like = {0: 'I', 1: 'am', 2: 'array-like', length: 3};
+// console.log(arr_like);
+// arr_like[2];//array-like
+// arr_like.length;// 3
+// console.log("is arr_like is an array?",Array.isArray(arr_like));// false
+// console.log("is arr_like is an object?", arr_like instanceof Object);// true
+
+// function checkArgs(){
+//     console.log("Array Like Args", arguments);
+//     const argArr = [...arguments];
+//     console.log("converted Array Args", argArr);
+//  argArr.forEach((elem) => {
+//         console.log(elem);
+//     })
+// }
+// checkArgs(1, 45);
+
+// console.log("HTML collection as a array like", document.getElementsByTagName("li"));
+// const collectionArr = Array.from(document.getElementsByTagName('li'));
+// console.log("Converted Array", collectionArr);
+
+
+// fromAsync()
+const collectionPromise = Array.fromAsync(document.getElementsByTagName('li'));
+console.log("Converted Array", collectionPromise);
+
+collectionPromise.then((value) => console.log(value) );
+
+const ret = Array.fromAsync({
+    0: Promise.resolve('tapaScript'),
+    1: Promise.resolve('Google'),
+    2: Promise.resolve('Apple'),
+    length: 3
+})
