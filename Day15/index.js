@@ -396,4 +396,116 @@ const ret = Array.fromAsync({
     1: Promise.resolve('Google'),
     2: Promise.resolve('Apple'),
     length: 3
-})
+}).then((value) => console.log(value));
+
+console.log(ret);
+
+// reduceRight()
+let number = [100, 40, 15];
+const subsResult = number.reduceRight((accumulator, current) => {
+    return accumulator - current;
+});
+
+console.log('Sub', subsResult);
+
+
+let customers =[
+  {
+    'id': 001,
+    'f_name': 'Abby',
+    'l_name': 'Thomas',
+    'gender': 'M',
+    'married': true,
+    'age': 32,
+    'expense': 500,
+    'purchased': ['Shampo', 'Toys', 'Book']
+  },
+  {
+    'id': 002,
+    'f_name': 'Jerry',
+    'l_name': 'Tom',
+    'gender': 'M',
+    'married': true,
+    'age': 64,
+    'expense': 100,
+    'purchased': ['Stick', 'Blade']
+  },
+  {
+    'id': 003,
+    'f_name': 'Dianna',
+    'l_name': 'Cherry',
+    'gender': 'F',
+    'married': true,
+    'age': 22,
+    'expense': 1500,
+    'purchased': ['Lipstick', 'Nail Polish', 'Bag', 'book']
+  },
+  {
+    'id': 004,
+    'f_name': 'Dev',
+    'l_name': 'Currian',
+    'gender': 'M',
+    'married': true,
+    'age': 8,
+    'expense': 90,
+    'purchased': ['book']
+  },
+  {
+    'id': 005,
+    'f_name': 'Maria',
+    'l_name': 'Gomes',
+    'gender': 'F',
+    'married': true,
+    'age': 7,
+    'expense': 300,
+    'purchased': ['Toys']
+  },
+];
+
+
+// some() - Do we have a young Customer (age less than 10 years)?
+const hasYoungCustomer = customers.some((customer) => {
+    return customer.age < 10;
+});
+
+console.log('Has young customer less then 10',hasYoungCustomer);//true
+
+
+// every() - Every customer is married
+const isAllmarried = customers.every((customer) => {
+  return customer.married;
+});
+
+console.log('All customer married?:',isAllmarried);//All customer married?: false
+
+// find() - Find the youngest custoner 
+
+const foundYoungCustomers = customers.find((customer) => {
+   return customer.age > 10;
+});
+
+console.log('Found younger customer (Age < 10)',foundYoungCustomers);
+
+// findIndex()
+const youngCustomerIndex = customers.findIndex((customer) => {
+   return customer.age < 10;
+});
+
+console.log('Found younger customer Index: ',youngCustomerIndex);
+
+
+// findLast()
+const lastFoundYoungCustomers = customers.findLast((customer) => {
+   return customer.age > 10;
+});
+
+console.log('[find] last found young customer  (age<10)',lastFoundYoungCustomers);
+
+
+// findLastIndex()
+const lastIndexFoundYoungCustomers = customers.findLastIndex((customer) => {
+   return customer.age > 10;
+});
+
+console.log('[lastIndex] last found young customer  (age<10)',lastFoundYoungCustomers);
+
