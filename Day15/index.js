@@ -80,8 +80,8 @@ Array.isArray({'tomato': '🍔'});//return false
 Array.isArray([]);//return true
 
 
-const arr = [1,2,3,4];
-Array.isArray(arr);//true
+// const arr = [1,2,3,4];
+// Array.isArray(arr);//true
 
 
 // Array Destructuring
@@ -509,3 +509,56 @@ const lastIndexFoundYoungCustomers = customers.findLastIndex((customer) => {
 
 console.log('[lastIndex] last found young customer  (age<10)',lastFoundYoungCustomers);
 
+
+// Use case: Get the total amount spent by married customers
+
+// reduce()
+// filter()
+const totalExpense = customers.filter((customer) => {
+  return customer.married;
+}).map((marriedCustomer) => {
+  return marriedCustomer.expense;
+}).reduce((accum, expense) => {
+  return accum+expense;
+}, 0);
+
+console.log(" Total expend of marrid customers in INR :  ",totalExpense)
+
+const arr = [1,2,3,4,5]
+
+let sum = 0 ;
+arr.forEach((elem) =>{
+  sum = sum + elem;
+  console.log(elem)
+})
+
+console.log("sum of using forEach", sum)
+
+
+// entries()
+
+const arrItr = arr.entries();
+// console.log("Array Itr ",arrItr.next().value)//[0, 1]
+// console.log("Array Itr ",arrItr.next().value)//[1, 2]
+
+for(const[index,element] of arrItr){
+  console.log(index,element)
+}
+
+// values()
+
+const arrItr2 = arr.values();
+
+for(const value of arrItr2){
+  console.log(value);
+}
+
+// flatMap()
+
+const arr11 = [1, 2, 3, 4];
+
+console.log(arr11.map(item => item *2));//[2, 4, 6, 8]
+console.log("simple flatMap : ", arr11.flatMap(item => item *2));//[2, 4, 6, 8]
+
+console.log("Complex map : ", arr11.map(item => [item *2]));//[[2],[4],[6]...]
+console.log("Complex flatMap : ", arr11.flatMap(item => [item *2]));//[2, 4, 6, 8]
