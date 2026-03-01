@@ -114,3 +114,12 @@
 
     
 }
+
+
+// Controlling Visibility
+{
+    const mainDivElem = document.getElementById('main-id');
+    // mainDivElem.style.display = "none";
+    // mainDivElem.style.visibility = "hidden";
+    mainDivElem.style.opacity = ".5";
+}
