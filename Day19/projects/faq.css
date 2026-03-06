@@ -1,0 +1,21 @@
+.faq-item {
+    background: red;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.question, .answer {
+    background: #0000002b;
+    padding: 10px;
+    border-radius: 6px;
+    margin: 2px;
+}
+
+.answer {
+    display: none;
+}
+
+.answer.show{
+    display: block;
+}
+

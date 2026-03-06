@@ -63,3 +63,5 @@ function handleChange (event){
 const searchElem = document.getElementById('search-id');
 
 searchElem.addEventListener('change', handleChange);
+
+
